@@ -33,7 +33,11 @@
  *                                  Add: MiscFunctions.physPinToGpio, MiscFunctions.getAlt
  * 
  ************************************************************************************************/
+using System;
+using System.Collections.Generic;
 using System.Runtime.InteropServices;
+using System.Linq;
+using System.Text;
 
 namespace WiringPi
 {
@@ -61,11 +65,8 @@ namespace WiringPi
     public class GPIO
     {
 
-        public enum GpioPinDigitalValue
-        {
-            Low = 0,
-            High = 1
-        }
+        public int Low = 0;
+        public int High = 0;
 
         public enum PullMode
         {
@@ -104,7 +105,7 @@ namespace WiringPi
 
         //extern void digitalWrite(int pin, int value);
         [DllImport("libwiringPi.so", EntryPoint = "digitalWrite")]
-        public static extern void digitalWrite(int pin, GpioPinDigitalValue value);
+        public static extern void digitalWrite(int pin, int value);
 
         //extern int analogRead(int pin);
         [DllImport("libwiringPi.so", EntryPoint = "analogRead")]
