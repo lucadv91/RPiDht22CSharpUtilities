@@ -24,6 +24,6 @@ public class Dht22Data
 		{
 			this.temperature = t;
 			this.humidity = h;
-			this.date = String.Format("{0:yyyy-MM-dd HH:mm:ss}", DateTime.Now);
+			this.timestamp = String.Format("{0:yyyy-MM-dd HH:mm:ss}", DateTime.Now);
 		}
 }
