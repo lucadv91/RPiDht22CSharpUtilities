@@ -7,8 +7,9 @@ gcc -lwiringPi -shared -Wall -I./lib -o ./bin/libdht22reader.so ./lib/libdht22re
 mkdir ./bin
 cp ./lib/*.so ./bin
 cp ./lib/*.dll ./bin
+cp *.config ./bin
 
-mcs -unsafe -r:System.Data.dll Dht22Console.cs Dht22Reader.cs WiringPi.cs Dht22SQLiteSaver.cs Dht22Data.cs SQLite.cs
+mcs -unsafe -r:System.Data.dll,System.Configuration.dll Dht22Console.cs Dht22Reader.cs WiringPi.cs Dht22SQLiteSaver.cs Dht22Data.cs SQLite.cs
 
 mv ./*.exe ./bin
 

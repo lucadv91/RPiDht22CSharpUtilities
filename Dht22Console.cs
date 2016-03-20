@@ -1,5 +1,6 @@
 using System;
 using WiringPi;
+using System.Configuration;
 
 class Dht22Console 
 {
@@ -10,7 +11,7 @@ class Dht22Console
 		int maxReadAttempts = 20;
 		Dht22Data data;
 
-		var reader = new Dht22Reader(7);	
+		var reader = new Dht22Reader(Int32.Parse(ConfigurationManager.AppSettings["ReadPin"]));	
 		do
 		{
 			if ( currentReadAttempt > 0 )
@@ -20,7 +21,7 @@ class Dht22Console
 			currentReadAttempt++;
 		} while (!data.IsValid && currentReadAttempt <= maxReadAttempts);	
 
-		var saver = new Dht22SQLiteSaver("Data Source=/home/vlad/sensors_data.db;Version=3;");
+		var saver = new Dht22SQLiteSaver(ConfigurationManager.ConnectionStrings["default"].ConnectionString);
 		saver.SaveData(data);
 	}
 }
