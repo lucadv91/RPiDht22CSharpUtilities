@@ -18,7 +18,7 @@ public class Dht22Data
 
 		public float humidity { get; protected set;}
 		
-		public string date {get; protected set; }
+		public string timestamp {get; protected set; }
 		
 		public Dht22Data(float t, float h)
 		{
