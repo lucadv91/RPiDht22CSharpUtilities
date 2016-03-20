@@ -1,5 +1,5 @@
 # RPiDht22CSharpUtilities
-Utilities in C# to obtain and save data from a DHT22 sensor from a RaspberryPi B+
+Utilities in C# to obtain and save data from a DHT22 sensor from a RaspberryPi B+ 
 
 This repository contains:
  - a C# wrapper to the WiringPi library (https://github.com/danriches/WiringPi.Net/)
@@ -12,6 +12,7 @@ Dependencies:
  - WiringPi 
  - gcc
  - SQLite3
+ - locale must be set to en_US (otherwise sqlite-net would not compile in my case)
 	
 To build you have to first create a suitable .config file in the root directory of the project. 
 Then just execute ./build.sh and ./run.sh .
