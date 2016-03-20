@@ -1,10 +1,10 @@
 #!/bin/bash
 
+mkdir ./bin
 rm ./bin/*
 
 gcc -lwiringPi -shared -Wall -I./lib -o ./bin/libdht22reader.so ./lib/libdht22reader.c
 
-mkdir ./bin
 cp ./lib/*.so ./bin
 cp ./lib/*.dll ./bin
 cp *.config ./bin
