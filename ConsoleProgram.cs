@@ -2,7 +2,7 @@ using System;
 using WiringPi;
 using System.Configuration;
 
-class Dht22Console 
+class ConsoleProgram 
 {
 	public static void Main (string[] args)
 	{
